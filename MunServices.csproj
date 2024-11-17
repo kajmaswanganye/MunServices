@@ -123,6 +123,7 @@
     <Compile Include="AnnouncementsForm.Designer.cs">
       <DependentUpon>AnnouncementsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AVLNode.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="FileHandler.cs" />
     <Compile Include="Form1.cs">
@@ -131,6 +132,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Issue.cs" />
     <Compile Include="LocalEventsAnnouncementsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,13 +155,17 @@
     <Compile Include="ReportIssuesForm.Designer.cs">
       <DependentUpon>ReportIssuesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSearch.cs" />
-    <Compile Include="ViewIssuesForm.cs">
+    <Compile Include="ServiceRequestGraph.cs" />
+    <Compile Include="ServiceRequestHeap.cs" />
+    <Compile Include="ServiceRequestNode.cs" />
+    <Compile Include="ServiceRequestStatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewIssuesForm.Designer.cs">
-      <DependentUpon>ViewIssuesForm.cs</DependentUpon>
+    <Compile Include="ServiceRequestStatusForm.Designer.cs">
+      <DependentUpon>ServiceRequestStatusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceRequestTreeManager.cs" />
+    <Compile Include="UserSearch.cs" />
     <EmbeddedResource Include="AnnouncementsForm.resx">
       <DependentUpon>AnnouncementsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,8 +190,8 @@
     <EmbeddedResource Include="ReportIssuesForm.resx">
       <DependentUpon>ReportIssuesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewIssuesForm.resx">
-      <DependentUpon>ViewIssuesForm.cs</DependentUpon>
+    <EmbeddedResource Include="ServiceRequestStatusForm.resx">
+      <DependentUpon>ServiceRequestStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -18,29 +18,31 @@ namespace MunServices
             // Disabled buttons for tasks not implemented yet
             reportIssuesBtn.Enabled = true;
             localEventAndAnnouncementsBtn.Enabled = true;
-            serviceRequestStatusBtn.Enabled = false;
+            serviceRequestStatusBtn.Enabled = true;
         }
 
         private void reportIssuesBtn_Click(object sender, EventArgs e)
         {
             // Open the Report Issues form
-            ReportIssuesForm reportForm = new ReportIssuesForm();
+            ServiceRequestStatusForm serviceForm = new ServiceRequestStatusForm();
+            ReportIssuesForm reportForm = new ReportIssuesForm(serviceForm);
             reportForm.ShowDialog();  // Opens the form as a dialog box
         }
 
-        // Optional: Add a button for viewing previously reported issues
-        private void viewReportedIssuesBtn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("View Issues button clicked!");  // Debugging message
-            ViewIssuesForm viewIssuesForm = new ViewIssuesForm();
-            viewIssuesForm.ShowDialog();  // Opens the form as a dialog box
-        }
 
         private void localEventAndAnnouncementsBtn_Click(object sender, EventArgs e)
         {
-            LocalEventsAnnouncementsForm form = new LocalEventsAnnouncementsForm();
-            form.Show();
+            LocalEventsAnnouncementsForm localForm = new LocalEventsAnnouncementsForm();
+            localForm.ShowDialog();
 
         }
+
+        private void serviceRequestStatusBtn_Click(object sender, EventArgs e)
+        {
+            ServiceRequestStatusForm serviceForm   = new ServiceRequestStatusForm();
+            serviceForm.ShowDialog();
+        }
+
+    
     }
 }

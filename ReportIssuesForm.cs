@@ -14,8 +14,9 @@ namespace MunServices
         private string attachedFilePath; // Path to the attached file
         private string issuesFilePath = "issues.json"; // File path to save issues
         private int completedFieldsCount = 0; // Track completed fields for progress bar
+        private ServiceRequestStatusForm serviceForm; // Reference to the ServiceRequestStatusForm
 
-        public ReportIssuesForm()
+        public ReportIssuesForm(ServiceRequestStatusForm serviceForm)
         {
             InitializeComponent();
             InitializeComboBox();
@@ -23,6 +24,7 @@ namespace MunServices
             issues = new List<Issue>();
             attachedFilePath = string.Empty;
             progressBar.Maximum = 4; // We have 3 fields to complete: Location, Category, Description
+            this.serviceForm = serviceForm;
         }
 
         // Initialize ComboBox with municipal issues
@@ -48,10 +50,14 @@ namespace MunServices
         // Load previously saved issues from JSON
         private void LoadIssues()
         {
-            if (File.Exists(issuesFilePath))
+            if (File.Exists(issuesFilePath) && new FileInfo(issuesFilePath).Length > 0)
             {
                 string jsonData = File.ReadAllText(issuesFilePath);
                 issues = JsonSerializer.Deserialize<List<Issue>>(jsonData);
+            }
+            else
+            {
+                issues = new List<Issue>();
             }
         }
 
@@ -164,7 +170,8 @@ namespace MunServices
                 Location = locationTextBox.Text,
                 Category = categoryComboBox.SelectedItem.ToString(),
                 Description = descriptionRichTextBox.Text,
-                AttachedFilePath = attachedFilePath
+                AttachedFilePath = attachedFilePath,
+                Status = "To Do"
             };
 
             // Add the new issue to the list
@@ -173,20 +180,20 @@ namespace MunServices
             // Save issues to file
             SaveIssues();
 
+            // Refresh the ListBoxes in the ServiceRequestStatusForm
+            serviceForm.RefreshListViews(newIssue);
+
             // Show a success message
             MessageBox.Show("Your issue has been reported successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Reset the form fields
-            locationTextBox.Clear();
-            categoryComboBox.SelectedIndex = -1;
-            descriptionRichTextBox.Clear();
-            attachedFilePath = string.Empty;
-            mediaLable.Text = string.Empty; // Clear attached file name display
+        }
 
-            // Reset progress bar
-            completedFieldsCount = 0;
-            progressBar.Value = completedFieldsCount;
-            motivationalLabel.Text = "Start reporting a new issue!";
+        // Event handler for View Status Button click
+        private void viewStatusBtn_Click(object sender, EventArgs e)
+        {
+            // Navigate to the ServiceRequestStatusForm
+            serviceForm.Show();
+            this.Close();
         }
 
         // Event handler for Back Button click
@@ -194,14 +201,5 @@ namespace MunServices
         {
             this.Close(); // Close the form to return to the main menu
         }
-    }
-
-    // Class to represent an issue
-    public class Issue
-    {
-        public string Location { get; set; }
-        public string Category { get; set; }
-        public string Description { get; set; }
-        public string AttachedFilePath { get; set; }
     }
 }

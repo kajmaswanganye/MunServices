@@ -44,6 +44,7 @@
             this.motivationalLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.viewStatusBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -215,6 +216,18 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // viewStatusBtn
+            // 
+            this.viewStatusBtn.BackColor = System.Drawing.Color.Black;
+            this.viewStatusBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewStatusBtn.ForeColor = System.Drawing.Color.White;
+            this.viewStatusBtn.Location = new System.Drawing.Point(713, 504);
+            this.viewStatusBtn.Name = "viewStatusBtn";
+            this.viewStatusBtn.Size = new System.Drawing.Size(139, 45);
+            this.viewStatusBtn.TabIndex = 10;
+            this.viewStatusBtn.Text = "View Status";
+            this.viewStatusBtn.UseVisualStyleBackColor = false;
+            // 
             // ReportIssuesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +235,7 @@
             this.BackColor = System.Drawing.Color.Tan;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.viewStatusBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.motivationalLabel);
@@ -255,5 +269,6 @@
         private System.Windows.Forms.Label motivationalLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button viewStatusBtn;
     }
 }

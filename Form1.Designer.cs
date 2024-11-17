@@ -33,7 +33,6 @@
             this.reportIssuesPanel = new System.Windows.Forms.Panel();
             this.reportIssuesBtn = new System.Windows.Forms.Button();
             this.localEventAndAnnouncementsPanel = new System.Windows.Forms.Panel();
-            this.viewReportedIssuesBtn = new System.Windows.Forms.Button();
             this.serviceRequestStatusPanel = new System.Windows.Forms.Panel();
             this.localEventAndAnnouncementsBtn = new System.Windows.Forms.Button();
             this.serviceRequestStatusBtn = new System.Windows.Forms.Button();
@@ -53,10 +52,9 @@
             this.flowLayoutPanel1.Controls.Add(this.reportIssuesPanel);
             this.flowLayoutPanel1.Controls.Add(this.localEventAndAnnouncementsPanel);
             this.flowLayoutPanel1.Controls.Add(this.serviceRequestStatusPanel);
-            this.flowLayoutPanel1.Controls.Add(this.serviceRequestStatusBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(217, 312);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(435, 179);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(435, 141);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // reportIssuesPanel
@@ -81,26 +79,15 @@
             // 
             // localEventAndAnnouncementsPanel
             // 
-            this.localEventAndAnnouncementsPanel.Controls.Add(this.viewReportedIssuesBtn);
+            this.localEventAndAnnouncementsPanel.Controls.Add(this.localEventAndAnnouncementsBtn);
             this.localEventAndAnnouncementsPanel.Location = new System.Drawing.Point(3, 49);
             this.localEventAndAnnouncementsPanel.Name = "localEventAndAnnouncementsPanel";
             this.localEventAndAnnouncementsPanel.Size = new System.Drawing.Size(430, 40);
             this.localEventAndAnnouncementsPanel.TabIndex = 2;
             // 
-            // viewReportedIssuesBtn
-            // 
-            this.viewReportedIssuesBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewReportedIssuesBtn.Location = new System.Drawing.Point(-3, 0);
-            this.viewReportedIssuesBtn.Name = "viewReportedIssuesBtn";
-            this.viewReportedIssuesBtn.Size = new System.Drawing.Size(433, 40);
-            this.viewReportedIssuesBtn.TabIndex = 1;
-            this.viewReportedIssuesBtn.Text = "View Reported Issues";
-            this.viewReportedIssuesBtn.UseVisualStyleBackColor = true;
-            this.viewReportedIssuesBtn.Click += new System.EventHandler(this.viewReportedIssuesBtn_Click);
-            // 
             // serviceRequestStatusPanel
             // 
-            this.serviceRequestStatusPanel.Controls.Add(this.localEventAndAnnouncementsBtn);
+            this.serviceRequestStatusPanel.Controls.Add(this.serviceRequestStatusBtn);
             this.serviceRequestStatusPanel.Location = new System.Drawing.Point(3, 95);
             this.serviceRequestStatusPanel.Name = "serviceRequestStatusPanel";
             this.serviceRequestStatusPanel.Size = new System.Drawing.Size(430, 40);
@@ -110,7 +97,7 @@
             // 
             this.localEventAndAnnouncementsBtn.BackColor = System.Drawing.Color.White;
             this.localEventAndAnnouncementsBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.localEventAndAnnouncementsBtn.Location = new System.Drawing.Point(-3, 0);
+            this.localEventAndAnnouncementsBtn.Location = new System.Drawing.Point(-1, 3);
             this.localEventAndAnnouncementsBtn.Name = "localEventAndAnnouncementsBtn";
             this.localEventAndAnnouncementsBtn.Size = new System.Drawing.Size(433, 40);
             this.localEventAndAnnouncementsBtn.TabIndex = 2;
@@ -122,12 +109,13 @@
             // 
             this.serviceRequestStatusBtn.BackColor = System.Drawing.Color.White;
             this.serviceRequestStatusBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceRequestStatusBtn.Location = new System.Drawing.Point(3, 141);
+            this.serviceRequestStatusBtn.Location = new System.Drawing.Point(3, 6);
             this.serviceRequestStatusBtn.Name = "serviceRequestStatusBtn";
             this.serviceRequestStatusBtn.Size = new System.Drawing.Size(430, 34);
             this.serviceRequestStatusBtn.TabIndex = 2;
             this.serviceRequestStatusBtn.Text = "Service Request Status";
             this.serviceRequestStatusBtn.UseVisualStyleBackColor = false;
+            this.serviceRequestStatusBtn.Click += new System.EventHandler(this.serviceRequestStatusBtn_Click);
             // 
             // sloganLabel
             // 
@@ -190,7 +178,6 @@
         private System.Windows.Forms.Button reportIssuesBtn;
         private System.Windows.Forms.Panel localEventAndAnnouncementsPanel;
         private System.Windows.Forms.Button localEventAndAnnouncementsBtn;
-        private System.Windows.Forms.Button viewReportedIssuesBtn;
         private System.Windows.Forms.Label sloganLabel;
         private System.Windows.Forms.Label appNameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
